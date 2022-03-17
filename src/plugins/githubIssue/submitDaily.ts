@@ -47,12 +47,13 @@ export async function submitDaily({
 
   async function initContext() {
     const issueInfo = await getCurrentIssueInfo(currentIssueName());
+    console.log(issueInfo)
     if (issueInfo) {
       context.issueNumber = issueInfo.number;
     }
 
     context.userInfo = await selfUserInfo();
-
+    console.log(context)
     const commentList = await getCommentList();
     if (commentList) {
       context.commentList = commentList;
@@ -144,7 +145,7 @@ export async function submitDaily({
         repo: REPO,
         issue_number: context.issueNumber,
       }
-    );
+    )
 
     return data;
   }

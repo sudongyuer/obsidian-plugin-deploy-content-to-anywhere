@@ -16,7 +16,6 @@ export function githubIssue(main: MyPlugin) {
     editorCallback: async (editor: Editor, view: MarkdownView) => {
       console.log(view.data);
       console.log(main.settings);
-
       try {
         await submitDaily({
           content: view.data,
